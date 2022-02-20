@@ -7,14 +7,14 @@
     <title>Self Intro with API</title>
   </head>
   <body>
-    <h1>Self introduction</h1>
+    <h1>Tell us a little about yourself!</h1>
 
     <p>
       <div>
         <label for="user-first-name">First name</label>
       </div>
       <div>
-        <input type="text" id="user-first-name" size="50">
+        <input type="text" name="first_name" id="user-first-name" size="50">
       </div>
     </p>
 
@@ -23,7 +23,7 @@
         <label for="user-last-name">Last name</label>
       </div>
       <div>
-        <input type="text" id="user-last-name" size="50">
+        <input type="text" name="last_name" id="user-last-name" size="50">
       </div>
     </p>
 
@@ -32,9 +32,11 @@
         <label for="user-gender">Gender</label>
       </div>
       <div>
-        <label><input type="radio" name="gender" value="0" id="user-gender">Male</label>
-        <label><input type="radio" name="gender" value="1" id="user-gender">Female</label>
-        <label><input type="radio" name="gender" value="2" id="user-gender">Not sure</label>
+        <label id="user-gender">
+          <input type="radio" name="gender" value="0" id="user-gender-male">Male
+          <input type="radio" name="gender" value="1" id="user-gender-female">Female
+          <input type="radio" name="gender" value="2" id="user-gender-not-sure">Not sure
+        </label>
       </div>
     </p>
 
@@ -43,7 +45,7 @@
         <label for="user-age">Age</label>
       </div>
       <div>
-        <input type="number" id="user-age" size="50">
+        <input type="number" name="age" id="user-age" size="50">
       </div>
     </p>
 
@@ -52,7 +54,7 @@
         <label for="user-company">Company</label>
       </div>
       <div>
-        <input type="text" id="user-company" size="50">
+        <input type="text" name="company" id="user-company" size="50">
       </div>
     </p>
 
@@ -61,7 +63,7 @@
         <label for="user-email">Email</label>
       </div>
       <div>
-        <input type="email" id="user-email" size="50">
+        <input type="email" name="email" id="user-email" size="50">
       </div>
     </p>
 
@@ -70,7 +72,7 @@
         <label for="user-phone-number">Phone number</label>
       </div>
       <div>
-        <input type="tel" id="user-phone-number" size="50">
+        <input type="tel" name="phone_number" id="user-phone-number" size="50">
       </div>
     </p>
 
@@ -79,7 +81,7 @@
         <label for="user-twitter">Twitter</label>
       </div>
       <div>
-        <input type="text" id="user-twitter" size="50">
+        <input type="text" name="twitter" id="user-twitter" size="50">
       </div>
     </p>
 
@@ -88,7 +90,7 @@
         <label for="user-message">Message</label>
       </div>
       <div>
-        <textarea cols="70" rows="5" id="user-message"></textarea>
+        <textarea cols="70" rows="5" name="message" id="user-message"></textarea>
       </div>
     </p>
 
