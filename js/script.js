@@ -15,17 +15,24 @@ const fetchUser = async () => {
 
 const addUser = (user) => {
   const userProfile = `
-  <div id="users-${user.id}">
-    <p>First name: ${user.first_name}</p>
-    <p>Last name: ${user.last_name}</p>
-    <p>Gender: ${user.gender}</p>
-    <p>Age: ${user.age}</p>
-    <p>Company: ${user.company}</p>
-    <p>Email: ${user.email}</p>
-    <p>Phone number: ${user.phone_number}</p>
-    <p>Twitter: ${user.twitter}</p>
-    <p>Message: ${user.message}</p>
+  <div class="m-2 border border-3">
+      <div class="card">
+        <div class="card-body">
+          <div id="users-${user.id}">
+            <p>First name: ${user.first_name}</p>
+            <p>Last name: ${user.last_name}</p>
+            <p>Gender: ${user.gender}</p>
+            <p>Age: ${user.age}</p>
+            <p>Company: ${user.company}</p>
+            <p>Email: ${user.email}</p>
+            <p>Phone number: ${user.phone_number}</p>
+            <p>Twitter: ${user.twitter}</p>
+            <p>Message: ${user.message}</p>
+          </div>
+        </div>
+      </div>
   </div>
+
   `;
   userList.insertAdjacentHTML('beforeend', userProfile);
 };
@@ -53,7 +60,7 @@ const phoneNumberElement = document.getElementById('user-phone-number');
 const twitterElement = document.getElementById('user-twitter');
 const messageElement = document.getElementById('user-message');
 
-function genders() {
+function selectGender() {
   let genderElements = document.getElementsByName('gender');
   let len = genderElements.length;
   let checkValue = '';
@@ -69,7 +76,7 @@ function genders() {
   }
   return checkValue;
 }
-const genderElement = Number(genders());
+const genderElement = Number(selectGender());
 
 const registerUser = async () => {
   const url = `${baseUrl}/api/v1/users`;
