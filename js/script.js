@@ -1,4 +1,4 @@
-const baseUrl = 'https://self-intro-api-production.herokuapp.com';
+const baseUrl = 'https://self-intro-api-staging.herokuapp.com';
 const userList = document.getElementById('user-list');
 
 const fetchUsers = async () => {
