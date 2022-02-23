@@ -1,7 +1,7 @@
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'https://self-intro-api-production.herokuapp.com';
 const userList = document.getElementById('user-list');
 
-const fetchUser = async () => {
+const fetchUsers = async () => {
   const url = `${baseUrl}/api/v1/users`;
   const response = await fetch(url);
 
@@ -32,14 +32,13 @@ const addUser = (user) => {
         </div>
       </div>
   </div>
-
   `;
   userList.insertAdjacentHTML('beforeend', userProfile);
 };
 
 const displayUsers = async () => {
   try {
-    const users = await fetchUser();
+    const users = await fetchUsers();
     users.forEach((user) => addUser(user));
   } catch (e) {
     alert(e);
@@ -49,17 +48,6 @@ const displayUsers = async () => {
 displayUsers();
 
 // =========================================================
-
-const button = document.getElementById('user-button');
-const firstNameElement = document.getElementById('user-first-name');
-const lastNameElement = document.getElementById('user-last-name');
-const ageElement = document.getElementById('user-age');
-const companyElement = document.getElementById('user-company');
-const emailElement = document.getElementById('user-email');
-const phoneNumberElement = document.getElementById('user-phone-number');
-const twitterElement = document.getElementById('user-twitter');
-const messageElement = document.getElementById('user-message');
-
 function selectGender() {
   let genderElements = document.getElementsByName('gender');
   let len = genderElements.length;
@@ -76,6 +64,16 @@ function selectGender() {
   }
   return checkValue;
 }
+
+const button = document.getElementById('user-button');
+const firstNameElement = document.getElementById('user-first-name');
+const lastNameElement = document.getElementById('user-last-name');
+const ageElement = document.getElementById('user-age');
+const companyElement = document.getElementById('user-company');
+const emailElement = document.getElementById('user-email');
+const phoneNumberElement = document.getElementById('user-phone-number');
+const twitterElement = document.getElementById('user-twitter');
+const messageElement = document.getElementById('user-message');
 const genderElement = Number(selectGender());
 
 const registerUser = async () => {
